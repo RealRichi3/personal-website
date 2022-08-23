@@ -30,13 +30,16 @@ body {
 }
 :root {
   --main-solid-color: #00cc99;
-  --background-01: #222;
+  --background-01: rgb(255, 255, 255);
   --background-02: #333;
   --background-03: #434343;
   --secondary-back: #ffffff13;
-  --textcolor-01: #fff;
-  --textcolor-02: #aeaeae;
-  --textcolor-03: #6b6a6a;
+  --textcolor-01: rgb(22, 22, 22);
+  --textcolor-02: rgb(138, 138, 138);
+  --textcolor-03: #ebebeb;
+  --textcolor-04: #f5f5f5;
+  --textcolor-05: #dadada;
+
 }
 * {
   margin: 0;
@@ -777,7 +780,7 @@ header {
   border-bottom: 3px solid transparent;
 }
 .portfolio-nav button.active {
-  color: var(--textcolor-01);
+  color: var(--textcolor-04);
   background-color: var(--secondary-back);
 }
 .port-btn button:hover {
@@ -1383,7 +1386,7 @@ footer {
   }
 }
 
-.col-lg-6 > .mb-4 {
+#blogs .col-lg-6 > .mb-4 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1394,4 +1397,28 @@ footer {
 .col-lg-6 > .mb-4 > img {
   height: 100%;
   width: 100%;
+}
+
+
+.back-02 h1, .back-02 h4 {
+    color: var(--textcolor-04);
+}
+
+.back-02 p {
+    color: var(--textcolor-05);
+}
+
+.back-02 li, .back-02 button {
+    color: #c9c9c9
+}
+
+#contact li {
+    color:  var(--textcolor-01)
+}
+
+#contact button {
+    color: #f5f5f5
+}
+.back-02 button.active, .back-02 button:focus {
+    /* background: #c9c9c9 */
 }
