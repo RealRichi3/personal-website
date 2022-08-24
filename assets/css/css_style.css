@@ -1431,8 +1431,13 @@ footer {
   /* background: #c9c9c9 */
 }
 
-#home .container {
-  background-color: pink;
+#home {
+  background-image: url("/assets/img/bg (2).jpg");
+  -webkit-backdrop-filter: blur(8px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  backdrop-filter: blur(8px)  
 }
 
 .modal-body .container {
