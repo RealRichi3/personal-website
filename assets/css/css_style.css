@@ -1479,3 +1479,7 @@ footer {
   margin: 10px auto;
   border-radius: 3px;
 }
+
+#about .container .row .about_animate_04{
+  visibility: hidden
+}

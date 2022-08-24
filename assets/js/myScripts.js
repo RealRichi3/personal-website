@@ -1,10 +1,10 @@
 $(document).ready(function () {
-        //--preloader
-        $(window).on('load',function(){
-            setTimeout(function() {
-                removeLoader();
-            }, 1000);
-        })
+    //--preloader
+    $(window).on('load', function () {
+        setTimeout(function () {
+            removeLoader();
+        }, 1000);
+    })
     //----Go to Top Button
     const toTop = document.querySelector(".gotop");
     window.addEventListener("scroll", () => {
@@ -34,9 +34,9 @@ $(document).ready(function () {
         loop: true,
         items: 1,
         responsive: {
-            480: {items: 1},  // from zero to 480 screen width 4 items
-            768: {items: 2},  // from 480 screen widthto 768 6 items
-            1024: {items: 3}  // from 768 screen width to 1024 8 items
+            480: { items: 1 },  // from zero to 480 screen width 4 items
+            768: { items: 2 },  // from 480 screen widthto 768 6 items
+            1024: { items: 3 }  // from 768 screen width to 1024 8 items
         },
     });
 
@@ -230,8 +230,8 @@ $(document).ready(function () {
 function removeLoader() {
     $('.preloader').addClass('complete');
     $('.loader').fadeOut(200);
-    setTimeout(function() {
-        $( ".preloader").css('z-index', '-1000');
+    setTimeout(function () {
+        $(".preloader").css('z-index', '-1000');
         $("body").css("overflow", "auto");
     }, 1000);
 }
@@ -325,6 +325,7 @@ function startcontactAnimation() {
 
 //---- contact end
 
+const baseURL = "https://richie-mail-server.herokuapp.com/api"
 //---- contact mail start
 $('#contact-form').on('submit', function (e) {
     e.preventDefault();
@@ -333,27 +334,37 @@ $('#contact-form').on('submit', function (e) {
     var formData = $(this).serializeArray();
     var handlerUrl = $(this).attr('action');
 
-    $.ajax({
-        url: handlerUrl,
-        method: 'POST',
-        data: formData,
-        success: function (res) {
-            if (res.startsWith('ERR::')) {
-                alert(res.substring(5));
-            } else {
-                alert(res);
-            }
-
-            submitBtn.prop('disabled', false);
+    let config = {
+        method: 'post',
+        url: `${baseURL}/contactform/submit`,
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
         },
-        error: function (request, status, error) {
-            alert('Something is wrong. Make sure PHP is up and running properly.');
-            submitBtn.prop('disabled', false);
+        data: {
+            email: document.getElementById("email").value,
+            name: document.getElementById("name").value,
+            message: document.getElementById("email-message").value
         }
-    });
+    };
 
+    axios(config)
+        .then((response) => {
+            console.log(response)
+            if (response.status == 200) {
+                alert("Success")
+            } else {
+                alert("An error occured")
+            }
+        })
+        .catch(function (error) {
+            console.log(error)
+            alert('Something went wrong.');
+            submitBtn.prop('disabled', false);
+        });
     return false;
 });
+
+
 //---- contact mail end
 
 //========= Functions End ======
