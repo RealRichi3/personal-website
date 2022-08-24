@@ -475,7 +475,7 @@ header {
   border: 2px solid var(--main-solid-color);
 }
 .home-btn:hover {
-  background-color: transparent;
+  background-color: white;
   transition-duration: 0.5s;
   color: var(--main-solid-color);
   border: 2px solid var(--main-solid-color);
