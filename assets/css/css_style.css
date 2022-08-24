@@ -1468,3 +1468,14 @@ footer {
 .portfolioContainer .grid-item figure> img {
   object-fit: cover;
 }
+
+.flip4 li {
+  color: #f5f5f5;
+}
+
+.home-icon ul {
+  background: white;
+  width: fit-content;
+  margin: 10px auto;
+  border-radius: 3px;
+}
