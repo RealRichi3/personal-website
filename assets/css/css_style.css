@@ -837,32 +837,33 @@ header {
   border: 1px solid transparent;
 }
 .grid-item figure figcaption .fa-icon {
-  color: rgba(0, 0, 0, 0.6);
+  color: #afafaf;
+  /* background: white; */
   position: absolute;
-  left: 6%;
+  left: 5%;
   bottom: 4%;
-  font-size: 40px;
+  font-size: 30px;
   transform: translateX(0) translateY(15px) rotateZ(0) rotate(0deg) scale(1);
   opacity: 0;
 }
 .pic-title {
   position: absolute;
   text-align: center;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 20px;
   top: 35%;
   left: 10%;
   transform: translateX(80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   transition: all 0.4s ease-out;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(189, 189, 189, 0.75);
   opacity: 0;
 }
 .sub-title {
   position: absolute;
   text-align: center;
-  font-size: 20px;
-  line-height: 30px;
-  top: 55%;
+  font-size: 15px;
+  line-height: 15px;
+  top: 65%;
   transform: translateX(-80px) translateY(0) translateZ(0) rotate(0deg) scale(1);
   transition: 0.5s;
   opacity: 0;
@@ -891,7 +892,7 @@ header {
   transform: translateX(0) translateY(0) translateZ(0) rotate(0deg) scale(1);
   transition: 0.4s ease-out;
   padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.75);
 }
 .grid-item figure figcaption .sub-title {
   opacity: 1;
@@ -1445,4 +1446,20 @@ footer {
 
 .grid-item figure figcaption {
   display: block
+}
+.portfolioContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto
+}
+.portfolioContainer .grid-item .grid-item  .col-lg-4 .mb-2{
+  position: relative;
+}
+.portfolioContainer .grid-item figure {
+  /* height: 500px; */
+  /* width: 350px; */
+}
+
+.portfolioContainer .grid-item figure> img {
+  object-fit: cover;
 }
